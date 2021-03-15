@@ -1,0 +1,292 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* variables */
+:root{
+  --small-text: 0.85rem;
+  /* text-size */
+  --text-size: 1.05rem;
+  --title-size:1.5rem;
+  --header-size: 2.05rem;
+  /* text-color */
+  --text-color: #2b2d42;
+  --title-color:#003566;
+  --header-color: #03045e;
+  /* colors */
+  --primary:#003566;
+  --black:#343a40;
+  --white:#f2e9e4;
+  --blue:#3a0ca3;
+  --dark-blue:#03045e;
+  --red:#db222a;
+  --dark-red:#780000;
+  --green:#007200;
+  --dark-green:#004b23;
+  --yellow:#ffef9f;
+  --dark-yellow:#fbb02d;
+
+}
+body{
+  margin: 0;
+  max-width: 100%;
+  /* font-family: 'Lobster', cursive; */
+  font-family: 'Roboto', sans-serif;
+  
+}
+/* login form */
+#navbar1{
+  position: fixed;
+}
+@media (max-width:600px){
+  #navbar1{
+    position: relative;
+  }
+}
+#frontpage {
+  background-image: linear-gradient(
+      115deg,
+      rgba(216, 170, 153, 0.6),
+      rgba(242, 201, 186, 0.65)
+    ),
+    url("./assets/images/fontpage-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.fontpage-site-title{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width:600px){
+  .fontpage-site-title{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+  }
+}
+.fontpage-site-title .content h1{
+  font-weight: 1000;
+  font-size: 3.5rem;
+  color: var(--primary);
+  font-family: 'Cinzel', serif;
+  text-align: center;
+}
+.fontpage-site-title .content p{
+  font-weight: 200;
+  font-size: 1.5rem;
+  color: var(--primary);
+  font-family: 'Cinzel', serif;
+  text-align: center;
+
+
+}
+.font-page-form{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.font-page-form #login-form{
+  width: 55%;
+}
+@media(max-width:600px){
+  .font-page-form{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+  }
+  .font-page-form #login-form{
+    width: 90%;
+    margin-top: 0;
+  }
+}
+.font-page-form #login-form, .form-group label{
+  font-size: var(--text-size);
+  color: var(--primary);
+}
+.font-page-form #login-form .form-group input{
+  background: transparent;
+  border: 1px solid var(--dark-blue);
+}
+.font-page-form #login-form .form-group button{
+  background-color: var(--green);
+  color: var(--white);
+}
+.font-page-form #login-form .form-group h3{
+  font-weight: 350;
+  color: var(--dark-blue);
+}
+.navbarNav1{
+  justify-content: center;
+}
+.navbarNav1 .navbar-nav .nav-item{
+  /* color: var(--title-color); */
+  font-size: 1.2rem;
+  margin: 2px;
+}
+.navbarNav1 .navbar-nav .nav-item a{
+  color: var(--title-color);
+
+}
+.navbarNav1 .navbar-nav .nav-item a:hover{
+  background-color: var(--green);
+  color: var(--white);
+}
+@media (max-width:600px){
+  .navbarNav1 .navbar-nav .nav-item{
+    color: var(--title-color);
+    font-size: 1.2rem;
+    margin: 2px;
+    text-align: center;
+  }
+}
+
+/* end login and signup page */
+
+/* start home-page */
+#pageHome {
+  background-image: linear-gradient(
+      115deg,
+      rgba(216, 170, 153, 0.6),
+      rgba(242, 201, 186, 0.65)
+    ),
+    url("./assets/images/home.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow-x: hidden;
+  position: relative;
+}
+#pageHome .contents{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#pageHome .contents h1{
+  font-weight: 1000;
+  font-size: 3.5rem;
+  color: var(--primary);
+  font-family: 'Cinzel', serif;
+  text-align: center;
+}
+#pageHome div button{
+  border-radius: 5px;
+  height: 50px;
+  width: 150px;
+  /* background: linear-gradient(135deg,rgba(21, 10, 97, 0.9),rgba(107, 3, 26, 0.7)); */
+  background-color: var(--primary);
+  border: none;
+  transition: border-radius 500ms,width 500ms, background-color 1s ease-out;
+}
+#pageHome div button:hover{
+  /* background: linear-gradient(135deg,rgba(10,200,100,0.9),rgba(100,255,100,0.7)); */
+  width: 160px;
+  border-radius: 15px;
+  background-color: var(--green);
+  /* box-shadow: 2px 2px 2px 2px #ccc; */
+  transition: border-radius 1s,width 2s, background-color 2s ease-out;
+
+}
+#pageHome div button a{
+  color: var(--white);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+}
+
+
+
+/* customer part */
+#customer-page{
+  background-image: linear-gradient(
+      115deg,
+      rgba(216, 170, 153, 0.6),
+      rgba(242, 201, 186, 0.65)
+    ),
+    url("./assets/images/customer-page-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#navbar2{
+  position: fixed;
+  background-color: var(--blue);
+}
+@media (max-width:600px){
+  #navbar2{
+    position: relative;
+  }
+}
+.navbarNav2{
+  justify-content: center;
+}
+.navbarNav2 .navbar-nav .nav-item{
+  color: var(--white);
+  margin: 2px;
+}
+@media (max-width:600px){
+  .navbarNav2 .navbar-nav .nav-item{
+    color: var(--white);
+    margin: 2px;
+    text-align: center;
+  }
+}
+.navbarNav2 .navbar-nav .logOutIn{
+ position: absolute;
+ right: 15px;
+}
+@media(max-width:600px){
+  .navbarNav2 .navbar-nav .logOutIn{
+    position: relative;
+    display: block;
+   }
+}
+.navbarNav2 .navbar-nav .nav-item a{
+  color: var(--white);
+  font-size: 1rem;
+
+
+}
+.navbarNav2 .navbar-nav .nav-item a:hover{
+  background-color: var(--green);
+  color: var(--white);
+}
+.customer-table{
+  padding-top: 60px;
+}
+@media(max-width:600px){
+  .customer-table{
+    padding-top: 15px;
+  }
+}
+
+/* fa */
+.fa{
+  cursor: pointer;
+}
+
+/* add customer */
+#add-customer, #edit-customer, #view-customer{
+  display: none;
+  background-color: #f2e9e4;
+  position: absolute;
+  top: 110px;
+  right: 0;
+  left: 0;
+  padding: 15px;
+  margin: 0 auto;
+  box-shadow: 2px 2px 2px 2px #ccc;
+  border-radius: 10px;
+  transition: display 2s ease-in-out;
+}
