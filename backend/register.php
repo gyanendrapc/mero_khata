@@ -15,9 +15,7 @@ if (isset($_POST['submit'])) {
     $useraddress = test_input($_POST["user-address"]);
     $useremail = test_input($_POST["user-email"]);
     $userpassword = test_input($_POST["user-password"]);
-    $userpassword1 = test_input($_POST["user-confirm-password"]);
-    
-    
+    $userpassword1 = test_input($_POST["user-confirm-password"]);    
   }
 }
 
@@ -44,21 +42,24 @@ if(strlen($userfullname)<5){
   // inserting into database
   $userpassword = md5($userpassword);
   
-  $sql = "insert into users (username, contact, address, email, password, vkey ) values ('`$userfullname`','`$usercontact`','`$useraddress`','`$useremail`','`$userpassword`','`$vkey`')";
+
+  $sql = "insert into users (username, contact, address, email, password, vkey ) values ('$userfullname','$usercontact','$useraddress','$useremail','$userpassword','$vkey')";
   
   if (mysqli_query($conn, $sql)) {
     // echo "New record created successfully";
     $to = $useremail;
     $subject = "Email verification";
-    $message = "Click here <a href='http://localhost/mero_khata/backend/veryfy.php?vkey=`$vkey`'> to register account</a>";
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";    
-    $headers .= 'From: chaudharygyane699@gmail.com' . "\r\n";
-    mail($to,$subject,$message,$headers);
+    $message = "Click Here: <a href='http://localhost/mero_khata/backend/verify.php?vkey=$vkey'> <b>to register</b></a>";
+    $headers = "from:<chaudharygyane699@gmail.com>";
+    $headers .= "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";   
+    if(mail($to,$subject,$message,$headers)){
+      // echo "mail send";
+    header("location: thankyou.php");
 
-    echo $to;
-
-    // header("location: thankyou.php");
+    }else{
+      echo "mail not send";
+    }
   } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
