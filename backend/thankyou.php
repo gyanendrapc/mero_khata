@@ -1,1 +1,1 @@
-thank you for registering please check your email
+thank you for registering please check your email <b>   <a href="../index.php"> goto login page </a></b>

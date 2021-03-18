@@ -1,7 +1,7 @@
 <?php require './components/header.php'?>
 
 <div id="customer-page">
-<?php include './components/navbar3.php'?>
+<?php include './components/navbar2.php'?>
 <section class="customer-table">
 <h3 class="text-center p-2">Customers Table</h3>
 <?php include './components/vendor-table.php'?>

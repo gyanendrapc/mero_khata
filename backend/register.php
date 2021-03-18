@@ -1,15 +1,15 @@
 <?php
 // starting session
 session_start();
-$ERROR=NULL;
-$_SESSION["ERROR"] = "";
+$_SESSION["ERROR"] = NULL;
 
 // define variables
 $userfullname = $useremail = $usercontact = $useraddress = $userpassword = "";
 
 // getting data
-if (isset($_POST['submit'])) {
+
   if ($_SERVER['REQUEST_METHOD']=='POST') {
+    if (isset($_POST['signup'])) {
     $userfullname = test_input($_POST["user-name"]);
     $usercontact = test_input($_POST["user-contact"]);
     $useraddress = test_input($_POST["user-address"]);
@@ -30,9 +30,12 @@ function test_input($data) {
 
 // checking username length
 if(strlen($userfullname)<5){
-  $ERROR = "<p>Your user name must be at least 5 character</p>";
+  $_SESSION['ERROR'] = "Your user name must be at least 5 character.";
+  header('location: ../signup.php');
 }elseif($userpassword != $userpassword1){
-  $ERROR .= "<p>Your password do not match </p>";
+  $_SESSION['ERROR'] = " Your password do not match";
+  header('location: ../signup.php');
+
 }else{
   // form is valid
   require_once 'db.php';
@@ -58,7 +61,9 @@ if(strlen($userfullname)<5){
     header("location: thankyou.php");
 
     }else{
-      echo "mail not send";
+      $_SESSION['ERROR'] = "Signup failed....";
+      header('location: ../signup.php');
+      
     }
   } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);

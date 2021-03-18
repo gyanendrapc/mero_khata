@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light w-100" id="navbar1">
 <div class="container-fluid">
-<a class="navbar-brand" href="#">Mero Khata</a>
+<a class="navbar-brand" href="index.php">Mero Khata</a>
 <button
 class="navbar-toggler"
 type="button"
@@ -15,7 +15,7 @@ aria-label="Toggle navigation"
 <div class="collapse navbar-collapse navbarNav1" id="navbarNav">
 <ul class="navbar-nav">
 <li class="nav-item">
-<a class="nav-link" aria-current="page" href="#">Home</a>
+<a class="nav-link" aria-current="page" href="index.php">Home</a>
 </li>
 <li class="nav-item">
 <a class="nav-link" href="#">Features</a>

@@ -8,16 +8,28 @@ const deleteCustomer = document.querySelector("#delete-customer");
 // add customer
 addCustomerBtn.addEventListener("click", addCustomerFnx);
 function addCustomerFnx() {
-  addCustomer.style.display = "block";
+  if (addCustomer.style.display == "block") {
+    addCustomer.style.display = "none";
+  } else {
+    addCustomer.style.display = "block";
+  }
 }
 
 // edit customer
 function showViewCustomer() {
-  viewCustomer.style.display = "block";
+  if (viewCustomer.style.display == "block") {
+    viewCustomer.style.display = "none";
+  } else {
+    viewCustomer.style.display = "block";
+  }
 }
 // edit customer
 function showEditCustomer() {
-  editCustomer.style.display = "block";
+  if (editCustomer.style.display == "block") {
+    editCustomer.style.display = "none";
+  } else {
+    editCustomer.style.display = "block";
+  }
 }
 
 // close fnx

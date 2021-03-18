@@ -1,16 +1,9 @@
+<?php session_start();?>
 <?php require './components/header.php'?>
-<?php
-$ERROR = NULL;
-if($ERROR){
-echo "<script>alert(".$ERROR.")";
-
-}
-?>
-
 <div id="frontpage" class="">
   <?php include './components/navbar1.php'?>
-
   <div class="row h-100 mx-0">
+
     <div class="col-md-7">
       <div class="fontpage-site-title">
         <div class="content">
@@ -28,6 +21,14 @@ echo "<script>alert(".$ERROR.")";
           class="shadow p-3 mt-5"
         >
           <div class="form-group m-0">
+          <p class="text-danger text-capitalize text-center bg-light">
+          <?php 
+          if(isset($_SESSION['ERROR'])){
+            echo $_SESSION['ERROR'];
+          }
+          ?>
+         </p>
+
             <h3>Signup</h3>
           </div>
           <div class="form-group m-0">
@@ -98,13 +99,14 @@ echo "<script>alert(".$ERROR.")";
             />
           </div>
           <div class="form-group m-0 mt-2 d-flex justify-content-center">
-            <button type="submit" name="submit" class="btn">Signup</button>
+            <button type="submit" name="signup" class="btn">Signup</button>
           </div>
         </form>
       </div>
     </div>
   </div>
 </div>
+<?php session_unset();?>
 <script>
   document.getElementById("frontpage").style.height = window.innerHeight + "px";
 </script>
