@@ -1,4 +1,10 @@
-<table class="table table-striped">
+
+<?php
+ session_start();
+ if(!isset($_SESSION['USER-EMAIL'])){
+     header('location: index.php');
+ }
+ ?><table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">#</th>

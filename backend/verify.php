@@ -1,5 +1,10 @@
 <?php
-session_start();
+ session_start();
+ if(!isset($_SESSION['USER-EMAIL'])){
+     header('location: index.php');
+ }
+ ?>
+<?php
 if(isset($_GET['vkey'])){
     // Process Verification
     $vkey = $_GET['vkey'];

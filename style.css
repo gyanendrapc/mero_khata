@@ -277,7 +277,7 @@ body{
 }
 
 /* add customer */
-#add-customer, #edit-customer, #view-customer{
+#add-customer, #edit-customer, #view-customer, #update-amount{
   display: none;
   background-color: #f2e9e4;
   position: absolute;

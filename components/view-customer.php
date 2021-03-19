@@ -1,3 +1,8 @@
+<?php
+ if(!isset($_SESSION['USER-EMAIL'])){
+     header('location: index.php');
+ }
+ ?>
 <div id="view-customer" class="w-50">
 <div class="d-flex justify-content-between">
 <h3 class="text-primary">view customer</h3>

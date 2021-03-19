@@ -1,15 +1,11 @@
-<?php 
-session_start();
-?>
 <?php
-$uemail=$upass="";
-if ($_SERVER['REQUEST_METHOD']==='POST') {
-    if (isset($_POST['login'])) {
-        $uemail = test_input($_POST["user-email"]);
-        $upass = test_input($_POST["user-password"]);
+ session_start();
+ if(!isset($_SESSION['USER-EMAIL'])){
+     header('location: index.php');
+ }
+// include database
+include 'db.php';
 
-    }
-}
 // verifying data
 function test_input($data) {
   $data = trim($data);
@@ -18,33 +14,37 @@ function test_input($data) {
   return $data;
 }
 
-$upass = md5($upass);
+// add customer
+if(isset($_GET['add_customer'])){
+$name = $address = $contact = $email = $amount = "";
+if ($_SERVER['REQUEST_METHOD']==='GET') {
+    $name = test_input($_GET['customer-name']);
+    $address = test_input($_GET['customer-address']);
+    $contact = test_input($_GET['customer-contact']);
+    $email = test_input($_GET['customer-email']);
+    $amount = test_input($_GET['customer-amount']);
 
-// include database
-include 'db.php';
 
-$sql = "select username, password from users where email='$uemail' and password = '$upass' and verified = 1 LIMIT 1";
-echo mysqli_num_rows(mysqli_query($conn,$sql));
-if(mysqli_num_rows(mysqli_query($conn,$sql)) ==1 ){
-  $sql = "select * from users where email ='$uemail' AND password = '$upass' LIMIT 1";
-  $result = mysqli_query($conn, $sql);
+    $sql = "select * from customers where ccontact = '$contact'";
+    $result = mysqli_query($conn, $sql);
+    if(mysqli_num_rows($result) > 0){
+      $_SESSION['MESSAGE']="<script> alert('Customer already in the list');</script>";
+      header('location: ../customers.php');
+    }else{
+      $sql = "insert into customers (cname, caddress, ccontact, cemail, camount) values ('$name','$address','$contact','$email','$amount')";
+      if(mysqli_query($conn, $sql)){
+      $_SESSION['MESSAGE']="<script> alert('Customer added');</script>";
+      header('location: ../customers.php');
   
-  if (mysqli_num_rows($result) == 1) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-     
-      $_SESSION['USER-NAME'] = $row['username'];
-      $_SESSION['USER-EMAIL'] = $row['email'];
-
+      }
     }
-  } else {
-    echo "0 results";
+
+    
+
+  }else{
+    $_SESSION['MESSAGE']="<script> alert('Customer not added');</script>";
+    header('location: ../customers.php');
+
   }
-// *******************************************
-header('location: ../home.php');
-  
-}else{
-  $_SESSION['ERROR'] = 'login failed, please check your email or password';
-  header('location: ../index.php');
 }
 ?>
