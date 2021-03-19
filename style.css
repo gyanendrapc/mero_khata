@@ -131,14 +131,13 @@ body{
 .navbarNav1 .navbar-nav .nav-item{
   /* color: var(--title-color); */
   font-size: 1.2rem;
-  margin: 2px;
+  /* margin: 2px; */
 }
 .navbarNav1 .navbar-nav .nav-item a{
   color: var(--title-color);
 
 }
 .navbarNav1 .navbar-nav .nav-item a:hover{
-  background-color: var(--green);
   color: var(--white);
 }
 @media (max-width:600px){
@@ -146,7 +145,6 @@ body{
     color: var(--title-color);
     font-size: 1.2rem;
     margin: 2px;
-    text-align: center;
   }
 }
 
@@ -233,12 +231,12 @@ body{
 }
 .navbarNav2 .navbar-nav .nav-item{
   color: var(--white);
-  margin: 2px;
+  /* margin: 2px; */
 }
 @media (max-width:600px){
   .navbarNav2 .navbar-nav .nav-item{
     color: var(--white);
-    margin: 2px;
+    /* margin: 2px; */
     text-align: center;
   }
 }
@@ -259,7 +257,7 @@ body{
 
 }
 .navbarNav2 .navbar-nav .nav-item a:hover{
-  background-color: var(--green);
+  /* background-color: var(--green); */
   color: var(--white);
 }
 .customer-table{
@@ -268,6 +266,8 @@ body{
 @media(max-width:600px){
   .customer-table{
     padding-top: 15px;
+  overflow-x: scroll;
+
   }
 }
 

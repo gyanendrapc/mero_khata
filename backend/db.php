@@ -1,10 +1,4 @@
 <?php
- session_start();
- if(!isset($_SESSION['USER-EMAIL'])){
-     header('location: index.php');
- }
- ?>
-<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -17,5 +11,5 @@ $conn = mysqli_connect($servername, $username, $password, $database );
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
-echo "Connected successfully";
+// echo "Connected successfully";
 ?>

@@ -45,36 +45,32 @@
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a
-                  class="nav-link border"
+                  class="nav-link"
                   aria-current="page"
                   href="#"
                   id="add-customer-btn"
                   >Add Customer</a
                 >
               </li>
-              <!-- <li class="nav-item">
-        <a class="nav-link" href="#">Print</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">Message Customer</a>
-        </li> -->
+       
               <li class="nav-item">
                 <form class="form-inline my-2 my-lg-0 d-flex h-100">
                   <input
-                    class="form-control mr-sm-2"
+                    class="form-control"
                     type="search"
                     placeholder="Search"
                   />
                   <button
-                    class="btn my-2 my-sm-0 text-white border"
-                    type="submit"
-                  >
+                    class="btn my-2 my-sm-0 text-white"
+                    type="submit" name="search-customer"                  >
                     Search
                   </button>
                 </form>
               </li>
               <li class="nav-item logOutIn">
-                <a class="nav-link border" href="#">logout</a>
+                <form action="./backend/submit.php" method="GET">
+                  <input type="submit" class="btn text-white" name="logout" value="logout" />
+                </form>
               </li>
             </ul>
           </div>
