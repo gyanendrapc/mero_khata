@@ -51,7 +51,37 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 
 
 // logout
-if($_GET['logout']){
+if(isset($_GET['logout'])){
   header('location: ../index.php');
 }
+
+
+// delete function
+
+if(isset($_GET['deleteCustomer'])){
+  echo $id = $_GET['deleteCustomer'];
+
+  $sql = "delete from customers where id=$id";
+  if(mysqli_query($conn, $sql)){
+    echo $_SESSION['MESSAGE'] = "<script>alert('Customer deleted successfully');</script>";
+    header('location: ../customers.php');
+  }else{
+    echo $_SESSION['MESSAGE'] = "<script>alert('Customer not deleted');</script>";
+    // echo "Error deleting record: " . mysqli_error($conn);
+    header('location: ../customers.php');
+
+
+  }
+
+}
+
+// amount update
+// if(isset($_GET['add_amount'])||isset($_GET['substract_amount'])){
+//   $amount = $log = "";
+//   if($_SERVER['REQUEST_METHOD']==='GET'){
+//     $amount = input_method($_GET['amount']);
+//     $log = input_method($_GET['amount-detail']);
+//     $sql = "insert into customers_log (amount, log) values ('$amount', '$log')";
+//   }
+// }
 ?>

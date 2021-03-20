@@ -69,7 +69,7 @@
               </li>
               <li class="nav-item logOutIn">
                 <form action="./backend/submit.php" method="GET">
-                  <input type="submit" class="btn text-white" name="logout" value="logout" />
+                  <input type="submit" class="btn text-white" name="logout" value="logout"/>
                 </form>
               </li>
             </ul>

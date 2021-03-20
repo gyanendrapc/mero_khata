@@ -15,11 +15,10 @@
     <div class="form-group">
       <label for="customer-name">Amount</label>
       <input
-        type="num"
+        type="number"
         class="form-control"
         names="amount"
         id="amount"
-        min="0"
         required
       />
     </div>
@@ -36,8 +35,8 @@
     </div>
 
     <div class="form-group mt-2 d-flex justify-content-center">
-      <button type="add_customer" class="btn btn-primary mx-2"><i class="fa fa-plus"></i></button>
-      <button type="add_customer" class="btn btn-primary mx-2"><i class="fa fa-minus"></i></button>
+      <button type="insert_amount" class="btn btn-primary mx-2">Done</button>
+      <!-- <button type="substract_amount" class="btn btn-primary mx-2"><i class="fa fa-minus"></i></button> -->
     </div>
   </form>
 </div>

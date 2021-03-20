@@ -57,11 +57,14 @@
           ></i></span
         >&nbsp;&nbsp;|&nbsp;&nbsp;
         <span
-          ><i
+          >
+          <a href="./backend/submit.php?deleteCustomer='<?php echo $row['id'];?>'">
+          <i
             class="fa fa-trash delete-customer-btn text-danger"
             onclick="confirm('are you sure want to delete');"
           ></i
-        ></span>
+        >
+        </a></span>
       </td>
     </tr>
     <?php

@@ -59,6 +59,8 @@
         name="customer-amount"
         id="customer-name"
         min="0"
+        value="0"
+        readonly
       />
     </div>
     <div class="form-group mt-2 d-flex justify-content-center">
