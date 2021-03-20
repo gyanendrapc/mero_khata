@@ -23,7 +23,7 @@ if(!isset($_SESSION['USER-EMAIL'])){
         include './backend/db.php';
         $search_data = mysqli_real_escape_string($conn,$_REQUEST['search_content']);
         $search_data = preg_replace("#[^0-9a-z]i#","", $search_data);
-        $sql = "SELECT * FROM customers WHERE cname like '%$search_data%'";
+        $sql = "SELECT * FROM customers WHERE cname like '%$search_data%' and user_id = '".$_SESSION['ID']."'";
         $result = mysqli_query($conn , $sql);
         
         if (mysqli_num_rows($result)>0) { while ($row =

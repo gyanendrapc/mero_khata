@@ -20,8 +20,9 @@ if(!isset($_SESSION['USER-EMAIL'])){
   </thead>
   <tbody>
     <?php 
+    // echo $_SESSION['ID'];
 include './backend/db.php';
-$sql = "select * from customers";
+$sql = "select * from customers where user_id = '".$_SESSION['ID']."'";
 $result = mysqli_query($conn, $sql);
 if(mysqli_num_rows($result)>0){ while($row = mysqli_fetch_assoc($result)){ ?>
     <tr>

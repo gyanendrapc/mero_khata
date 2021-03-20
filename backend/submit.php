@@ -25,13 +25,13 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
     $amount = test_input($_GET['customer-amount']);
 
 
-    $sql = "select * from customers where ccontact = '$contact'";
+    $sql = "select * from customers where ccontact = '$contact' and user_id ='".$_SESSION['ID']."'";
     $result = mysqli_query($conn, $sql);
     if(mysqli_num_rows($result) > 0){
       $_SESSION['MESSAGE']="<script> alert('Customer already in the list');</script>";
       header('location: ../customers.php');
     }else{
-      $sql = "insert into customers (cname, caddress, ccontact, cemail, camount) values ('$name','$address','$contact','$email','$amount')";
+      $sql = "insert into customers (cname, caddress, ccontact, cemail, camount, user_id) values ('$name','$address','$contact','$email','$amount', '".$_SESSION['ID']."')";
       if(mysqli_query($conn, $sql)){
       $_SESSION['MESSAGE']="<script> alert('Customer added');</script>";
       header('location: ../customers.php');

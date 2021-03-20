@@ -11,7 +11,7 @@
     </span>
   </div>
 
-  <form action="../backebd/submit.php">
+  <form action="../backebd/submit.php" method="GET">
     <div class="form-group">
       <label for="customer-name">Amount</label>
       <input
@@ -24,13 +24,6 @@
     </div>
     <div class="form-group">
       <p for="custome">Details</p>
-      <!-- <input
-        type="text"
-        class="form-control"
-        names="amount-detail"
-        id="amount-detail"
-        required
-      /> -->
       <textarea name="amount-detail" id="amount-detail" class="w-100" required></textarea>
     </div>
 

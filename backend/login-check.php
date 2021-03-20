@@ -38,7 +38,7 @@ if(mysqli_num_rows(mysqli_query($conn,$sql)) ==1 ){
   if (mysqli_num_rows($result) == 1) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-     
+      $_SESSION['ID']=$row['id'];
       $_SESSION['USER-NAME'] = $row['username'];
       $_SESSION['USER-EMAIL'] = $row['email'];
 
