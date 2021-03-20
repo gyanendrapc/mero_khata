@@ -1,6 +1,6 @@
 <?php
 if(!isset($_SESSION['USER-EMAIL'])){
-  header('location: index.php');
+    header('location: index.php');
 }
 ?>
 <table class="table table-striped">
@@ -20,10 +20,14 @@ if(!isset($_SESSION['USER-EMAIL'])){
   </thead>
   <tbody>
     <?php 
-include './backend/db.php';
-$sql = "select * from customers";
-$result = mysqli_query($conn, $sql);
-if(mysqli_num_rows($result)>0){ while($row = mysqli_fetch_assoc($result)){ ?>
+        include './backend/db.php';
+        $search_data = mysqli_real_escape_string($conn,$_REQUEST['search_content']);
+        $search_data = preg_replace("#[^0-9a-z]i#","", $search_data);
+        $sql = "SELECT * FROM customers WHERE cname like '%$search_data%'";
+        $result = mysqli_query($conn , $sql);
+        
+        if (mysqli_num_rows($result)>0) { while ($row =
+    mysqli_fetch_assoc($result)) { ?>
     <tr>
       <td><?php echo $row['id'];?></td>
       <td><?php echo $row['cname'];?></td>
@@ -65,9 +69,8 @@ if(mysqli_num_rows($result)>0){ while($row = mysqli_fetch_assoc($result)){ ?>
       </td>
     </tr>
     <?php
-}
-}
-
-?>
+                    }
+                }
+                ?>
   </tbody>
 </table>

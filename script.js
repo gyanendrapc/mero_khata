@@ -48,3 +48,13 @@ function closeFnx() {
   editCustomer.style.display = "none";
   updateAmount.style.display = "none";
 }
+
+// delete function
+// function deleteVal() {
+//   var x = confirm("are you sure want to delete");
+//   if (x) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }

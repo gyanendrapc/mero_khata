@@ -29,7 +29,7 @@
       <!-- NAVBAR -->
       <nav class="navbar navbar-expand-lg navbar-dark w-100" id="navbar2">
         <div class="container-fluid">
-          <a class="navbar-brand" href="home.php">Mero Khata</a>
+          <a class="navbar-brand" href="customers.php">Mero Khata</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -54,7 +54,7 @@
               </li>
        
               <li class="nav-item">
-                <form class="form-inline my-2 my-lg-0 d-flex h-100" action="search.php" method="POST">
+              <form class="form-inline my-2 my-lg-0 d-flex h-100" action="search.php" method="POST">
                 <input type="text" name="search_content" class="form-control border" placeholder="@search" />	
 								<input type="submit" class="font-weight-bold text-white border btn" name="search" value="search">
                 </form>
@@ -79,7 +79,7 @@ if(isset($_SESSION['USER-NAME'])){
 
 ?>Customers Table
         </h3>
-        <?php include './components/customer-table.php'?>
+        <?php include './components/search-table.php'?>
       </section>
       <?php include './components/add-customer.php'?>
       <?php include './components/view-customer.php'?>
