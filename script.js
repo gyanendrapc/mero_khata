@@ -4,7 +4,7 @@ const addCustomer = document.querySelector("#add-customer");
 const viewCustomer = document.querySelector("#view-customer");
 const editCustomer = document.querySelector("#edit-customer");
 const deleteCustomer = document.querySelector("#delete-customer");
-const updateAmount = document.querySelector("#update-amount");
+// const updateAmount = document.querySelector("#update-amount");
 
 // add customer
 addCustomerBtn.addEventListener("click", addCustomerFnx);
@@ -33,20 +33,20 @@ function showEditCustomer() {
   }
 }
 // update amount
-function showUpdateAmount() {
-  if (updateAmount.style.display == "block") {
-    updateAmount.style.display = "none";
-  } else {
-    updateAmount.style.display = "block";
-  }
-}
+// function showUpdateAmount() {
+//   if (updateAmount.style.display == "block") {
+//     updateAmount.style.display = "none";
+//   } else {
+//     updateAmount.style.display = "block";
+//   }
+// }
 
 // close fnx
 function closeFnx() {
   addCustomer.style.display = "none";
   viewCustomer.style.display = "none";
   editCustomer.style.display = "none";
-  updateAmount.style.display = "none";
+  // updateAmount.style.display = "none";
 }
 
 // delete function

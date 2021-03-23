@@ -6,8 +6,12 @@
  if(isset($_SESSION['MESSAGE'])){
      echo $_SESSION['MESSAGE'];
     unset($_SESSION['MESSAGE']);
-
  }
+
+$customer_id = NULL;
+ if(isset($_GET['customer_id'])){
+  $customer_id = $_GET['customer_id'];
+}
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +29,7 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div id="customer-page">
+    <div id="amount-page">
       <!-- NAVBAR -->
       <nav class="navbar navbar-expand-lg navbar-dark w-100" id="navbar2">
         <div class="container-fluid">
@@ -43,58 +47,76 @@
           </button>
           <div class="collapse navbar-collapse navbarNav2" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item mx-4">
-                <a
-                  class="nav-link btn border"
-                  aria-current="page"
-                  href="#"
-                  id="add-customer-btn"
-                  >Add Customer</a
-                >
-              </li>
-              <!-- <li class="nav-link mx-4">
-              <select name="" id="" class="border">
-                <option value="add_amount" selected>Add Amount</option>
-                <option value="update_amount">Update Amount</option>
-                <option value="paid">Pay Amount</option>
-              </select>
-              </li> -->
-       
-              <li class="nav-item">
-                <form class="form-inline my-2 my-lg-0 d-flex h-100" action="search.php" method="POST">
-                <input type="text" name="search_content" class="form-control border" placeholder="@search" />	
-								<input type="submit" class="font-weight-bold text-white border btn" name="search" value="search">
-                </form>
-              </li>
               <li class="nav-item logOutIn">
                 <form action="./backend/submit.php" method="GET">
-                  <input type="submit" class="btn text-white btn border" name="logout" value="logout"/>
+                  <input
+                    type="submit"
+                    class="btn text-white btn border"
+                    name="logout"
+                    value="logout"
+                  />
                 </form>
               </li>
             </ul>
           </div>
         </div>
       </nav>
+      <!-- /NAVBAR -->
 
-      <!-- CLOSE NAVBAR -->
-      <section class="customer-table">
-        <h3 class="text-center p-2 border-bottom">
-          <?php 
-if(isset($_SESSION['USER-NAME'])){
-    echo $_SESSION['USER-NAME']."'s ";
-}
+      <form
+        id="amount-form"
+        action="./backend/submit.php"
+        method="GET"
+        class="w-25"
+      >
+        <h3 class="text-primary">Update Amount</h3>
+        <input
+          type="hidden"
+          name="customer_id"
+          value="<?php echo $customer_id; ?>"
+        />
+        <div class="form-group">
+          <label for="customer-name">Amount</label>
+          <input
+            type="number"
+            class="form-control"
+            name="amount"
+            id="amount"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <p for="custome">Details</p>
+          <textarea
+            name="amount_detail"
+            id="amount_detail"
+            class="w-100"
+            required
+          ></textarea>
+        </div>
 
-?>Customers Table
-        </h3>
-        <?php include './components/customer-table.php'?>
-      </section>
-      <?php include './components/add-customer.php'?>
-      <?php include './components/view-customer.php'?>
-      <?php include './components/edit-customer.php'?>
-      <?php // include './components/update-amount.php'?>
+        <div class="form-group mt-2 d-flex justify-content-center">
+          <i class="fa fa-plus"
+            >&nbsp;<input
+              type="submit"
+              name="add_amount"
+              class="btn btn-primary mx-2"
+              value="Add"
+          /></i>
+          <i class="fa fa-minus"
+            >&nbsp;<input
+              type="submit"
+              name="substract_amount"
+              class="btn btn-primary mx-2"
+              value="Substract"
+          /></i>
+
+          <!-- <button type="substract_amount" class="btn btn-primary mx-2"><i class="fa fa-minus"> &nbsp;&nbsp;Substract</i></button> -->
+        </div>
+      </form>
     </div>
     <script>
-      document.getElementById("customer-page").style.height =
+      document.getElementById("amount-page").style.height =
         window.innerHeight + "px";
     </script>
     <script src="assets/animejs/anime.min.js"></script>

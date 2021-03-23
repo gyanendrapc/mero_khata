@@ -2,6 +2,7 @@
 if(!isset($_SESSION['USER-EMAIL'])){
   header('location: index.php');
 }
+
 ?>
 <table class="table table-striped">
   <thead>
@@ -20,7 +21,7 @@ if(!isset($_SESSION['USER-EMAIL'])){
   </thead>
   <tbody>
     <?php 
-    // echo $_SESSION['ID'];
+// echo $_SESSION['ID'];
 include './backend/db.php';
 $sql = "select * from customers where user_id = '".$_SESSION['ID']."'";
 $result = mysqli_query($conn, $sql);
@@ -37,12 +38,13 @@ if(mysqli_num_rows($result)>0){ while($row = mysqli_fetch_assoc($result)){ ?>
       <td>
         <?php echo $row['camount'];?>
         <!-- amount update -->
-        <span
-          ><i class="fa fa-edit text-success" onclick="showUpdateAmount()"></i
-        ></span>
+        <span>
+          <a href="amount.php?customer_id=<?php echo $row['id']?>"
+            ><i class="fa fa-edit text-success" onclick="showUpdateAmount()"></i
+          ></a>
+        </span>
         <!-- close amount update -->
       </td>
-
       <td>
         <span
           ><i
@@ -65,6 +67,7 @@ if(mysqli_num_rows($result)>0){ while($row = mysqli_fetch_assoc($result)){ ?>
         ></span>
       </td>
     </tr>
+
     <?php
 }
 }
