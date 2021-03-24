@@ -20,16 +20,17 @@ if(!isset($_SESSION['USER-EMAIL'])){
   </thead>
   <tbody>
     <?php 
-        include './backend/db.php';
+        // include './backend/db.php';
         $search_data = mysqli_real_escape_string($conn,$_REQUEST['search_content']);
         $search_data = preg_replace("#[^0-9a-z]i#","", $search_data);
         $sql = "SELECT * FROM customers WHERE cname like '%$search_data%' and user_id = '".$_SESSION['ID']."'";
         $result = mysqli_query($conn , $sql);
+        $i = 1;
         
         if (mysqli_num_rows($result)>0) { while ($row =
     mysqli_fetch_assoc($result)) { ?>
     <tr>
-      <td><?php echo $row['id'];?></td>
+      <td><?php echo $i;?></td>
       <td><?php echo $row['cname'];?></td>
       <!-- <td><?php //echo $row['cname']+$row['ccontact'];?></td> -->
       <td><?php echo $row['caddress'];?></td>
@@ -75,6 +76,7 @@ if(!isset($_SESSION['USER-EMAIL'])){
       </td>
     </tr>
     <?php
+    $i++;
                     }
                 }
                 ?>

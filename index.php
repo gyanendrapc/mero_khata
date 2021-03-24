@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once './backend/db_setup.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

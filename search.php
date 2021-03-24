@@ -8,6 +8,7 @@ if(isset($_SESSION['MESSAGE'])){
   unset($_SESSION['MESSAGE']);
   
 }
+require_once './backend/db.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

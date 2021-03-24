@@ -9,7 +9,7 @@ if(isset($_GET['vkey'])){
     // Process Verification
     $vkey = $_GET['vkey'];
     // database connection
-    include 'db.php';
+    require_once 'db.php';
 
     // query
     $sql = "SELECT verified, vkey FROM users WHERE verified = 0 AND vkey='$vkey' LIMIT 1";

@@ -23,12 +23,14 @@ if(!isset($_SESSION['USER-EMAIL'])){
     <?php 
 // echo $_SESSION['ID'];
 
-include './backend/db.php';
+// include './backend/db.php';
 $sql = "select * from customers where user_id = '".$_SESSION['ID']."'";
 $result = mysqli_query($conn, $sql);
-if(mysqli_num_rows($result)>0){ while($row = mysqli_fetch_assoc($result)){ ?>
+$i=1;
+if(mysqli_num_rows($result)>0){
+   while($row = mysqli_fetch_assoc($result)){ ?>
     <tr>
-      <td><?php echo $row['id'];?></td>
+      <td><?php echo $i;?></td>
       <td><?php echo $row['cname'];?></td>
       <!-- <td><?php //echo $row['cname']+$row['ccontact'];?></td> -->
       <td><?php echo $row['caddress'];?></td>
@@ -74,6 +76,7 @@ if(mysqli_num_rows($result)>0){ while($row = mysqli_fetch_assoc($result)){ ?>
     </tr>
 
     <?php
+    $i++;
 }
 }
 

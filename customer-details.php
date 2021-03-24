@@ -9,7 +9,7 @@
 
  }
 
- include './backend/db.php';
+ require_once './backend/db.php';
  ?>
 <!DOCTYPE html>
 <html lang="en">

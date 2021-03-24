@@ -4,7 +4,7 @@ session_start();
 $_SESSION["ERROR"] = NULL;
 
 // include database
-include 'db.php';
+require_once 'db.php';
 
 // verifying data
 function test_input($data) {

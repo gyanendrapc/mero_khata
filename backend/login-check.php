@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 $upass = md5($upass);
 
 // include database
-include 'db.php';
+require_once 'db.php';
 
 $sql = "select username, password from users where email='$uemail' and password = '$upass' and verified = 1 LIMIT 1";
 echo mysqli_num_rows(mysqli_query($conn,$sql));

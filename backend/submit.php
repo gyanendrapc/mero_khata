@@ -4,7 +4,7 @@ if(!isset($_SESSION['USER-EMAIL'])){
   header('location: index.php');
 }
 // include database
-include 'db.php';
+require_once 'db.php';
 
 // verifying data
 function test_input($data) {
