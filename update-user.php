@@ -137,23 +137,16 @@ $customer_id = NULL;
             id="customer-email"
           />
         </div>
-        <!-- <div class="form-group">
-      <label for="customer-name">Amount</label>
-      <input
-        type="number"
-        class="form-control"
-        name="customer-name"
-        id="customer-name"
-        min="0"
-      />
-    </div> -->
         <div class="form-group mt-2 d-flex justify-content-center">
           <button type="submit" name="update_customer" class="btn btn-primary">
             Update
           </button>
         </div>
       </form>
+
     </div>
+    <?php include './components/add-customer.php'?>
+
     <script>
       document.getElementById("amount-page").style.height =
         window.innerHeight + "px";

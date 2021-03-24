@@ -43,9 +43,9 @@ aria-label="Toggle navigation"
 </button>
 <div class="collapse navbar-collapse navbarNav2" id="navbarNav">
 <ul class="navbar-nav">
-<li class="nav-item">
+<li class="nav-item mx-4">
 <a
-class="nav-link"
+class="nav-link border rounded"
 aria-current="page"
 href="#"
 id="add-customer-btn"
