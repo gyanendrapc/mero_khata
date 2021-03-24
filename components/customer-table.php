@@ -22,6 +22,7 @@ if(!isset($_SESSION['USER-EMAIL'])){
   <tbody>
     <?php 
 // echo $_SESSION['ID'];
+
 include './backend/db.php';
 $sql = "select * from customers where user_id = '".$_SESSION['ID']."'";
 $result = mysqli_query($conn, $sql);
@@ -47,16 +48,20 @@ if(mysqli_num_rows($result)>0){ while($row = mysqli_fetch_assoc($result)){ ?>
       </td>
       <td>
         <span
-          ><i
+          >
+          <a href="customer-details.php?id=<?php echo $row['id']?>">
+          <i
             class="fa fa-eye text-primary"
             onclick="showViewCustomer()"
-          ></i></span
+          ></i></a>
+          </span
         >&nbsp;&nbsp;|&nbsp;&nbsp;
         <span
-          ><i
+          ><a href="update-user.php?customer_id=<?php echo $row['id'];?>">
+          <i
             class="fa fa-edit text-success"
             onclick="showEditCustomer()"
-          ></i></span
+          ></i></a></span
         >&nbsp;&nbsp;|&nbsp;&nbsp;
         <span>
           <a

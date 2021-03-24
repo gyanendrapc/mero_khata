@@ -40,24 +40,30 @@ if(!isset($_SESSION['USER-EMAIL'])){
       <td>
         <?php echo $row['camount'];?>
         <!-- amount update -->
-        <span
-          ><i class="fa fa-edit text-success" onclick="showUpdateAmount()"></i
-        ></span>
+        <span>
+          <a href="amount.php?customer_id=<?php echo $row['id']?>"
+            ><i class="fa fa-edit text-success" onclick="showUpdateAmount()"></i
+          ></a>
+        </span>
         <!-- close amount update -->
       </td>
 
       <td>
-        <span
-          ><i
+      <span
+          >
+          <a href="customer-details.php?id=<?php echo $row['id']?>">
+          <i
             class="fa fa-eye text-primary"
             onclick="showViewCustomer()"
-          ></i></span
+          ></i></a>
+          </span
         >&nbsp;&nbsp;|&nbsp;&nbsp;
         <span
-          ><i
+          ><a href="update-user.php?customer_id=<?php echo $row['id'];?>">
+          <i
             class="fa fa-edit text-success"
             onclick="showEditCustomer()"
-          ></i></span
+          ></i></a></span
         >&nbsp;&nbsp;|&nbsp;&nbsp;
         <span>
           <a

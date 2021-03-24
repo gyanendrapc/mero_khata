@@ -82,8 +82,8 @@ if(isset($_SESSION['USER-NAME'])){
 <?php include './components/search-table.php'?>
 </section>
 <?php include './components/add-customer.php'?>
-<?php include './components/view-customer.php'?>
-<?php include './components/edit-customer.php'?>
+<?php //include './components/view-customer.php'?>
+<?php //include './components/edit-customer.php'?>
 </div>
 <script>
 document.getElementById("customer-page").style.height =

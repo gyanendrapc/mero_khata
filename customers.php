@@ -89,8 +89,8 @@ if(isset($_SESSION['USER-NAME'])){
         <?php include './components/customer-table.php'?>
       </section>
       <?php include './components/add-customer.php'?>
-      <?php include './components/view-customer.php'?>
-      <?php include './components/edit-customer.php'?>
+      <?php // include './components/view-customer.php'?>
+      <?php //include './components/edit-customer.php'?>
       <?php // include './components/update-amount.php'?>
     </div>
     <script>
