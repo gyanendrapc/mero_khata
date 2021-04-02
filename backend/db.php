@@ -27,7 +27,7 @@ $users = "CREATE TABLE `users` (
 mysqli_query($conn, $users);
 
 $customers = "CREATE TABLE `customers` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `cname` varchar(45) NOT NULL,
   `caddress` varchar(45) NOT NULL,
   `ccontact` varchar(20) NOT NULL,
@@ -39,7 +39,7 @@ $customers = "CREATE TABLE `customers` (
 mysqli_query($conn, $customers);
 
 $customers_log ="CREATE TABLE `customers_log` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `user_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `amount` int(20) NOT NULL,
