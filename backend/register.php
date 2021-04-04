@@ -37,6 +37,7 @@ if (isset($_POST['signup'])) {
     }elseif($userpassword != $userpassword1){
       $_SESSION['ERROR'] = " Your password do not match";
       header('location: ../signup.php');
+      exit();
       
     }else{
  
@@ -46,11 +47,12 @@ if (isset($_POST['signup'])) {
       // inserting into database
       $userpassword = md5($userpassword);
       
-      $sql = "select * from users where email = '$useremail' OR contact = '$usercontact'";
+      $sql = "select * from users where email = '$useremail' OR contact = '$usercontact' and verified=1";
       $result = mysqli_query($conn, $sql);
       if(mysqli_num_rows($result) > 0){
-        echo $_SESSION['ERROR']="<script> alert('You have already signup with this number or email please check your email for verification.');</script>";
-        header('location: ../index.php');
+        $_SESSION['ERROR']="You have already signup with this number or email";
+        header('location: ../signup.php');
+        exit();
       }else{
         // code here
         $sql = "insert into users (username, contact, address, email, password, vkey ) values ('$userfullname','$usercontact','$useraddress','$useremail','$userpassword','$vkey')";

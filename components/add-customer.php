@@ -51,7 +51,7 @@
         id="customer-email"
       />
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="customer-name">Amount</label>
       <input
         type="number"
@@ -62,7 +62,7 @@
         value="0"
         readonly
       />
-    </div>
+    </div> -->
     <div class="form-group mt-2 d-flex justify-content-center">
       <button type="submit" name="add_customer" class="btn btn-primary">Add</button>
     </div>

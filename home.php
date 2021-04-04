@@ -33,7 +33,7 @@ if(($_SESSION['USER-NAME'])){
 ?>
           </h1>
           <div class="d-flex justify-content-center">
-            <!-- <button class="m-2"><a href="vendor.php">Customer</a></button> -->
+            <button class="m-2"><a href="vendor.php">Vendors</a></button>
             <button class="m-2"><a href="customers.php">Customers</a></button>
           </div>
         </div>

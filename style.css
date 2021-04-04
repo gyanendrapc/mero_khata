@@ -353,3 +353,16 @@ body{
   background-position: center;
   background-size: cover;
 }
+
+
+
+
+/* alert messages */
+#alert_messages{
+  display: flex;
+  position: absolute;
+  width: 500px;
+  top: 18%;
+  padding: 15px;
+  left: 30%;
+}

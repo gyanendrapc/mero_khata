@@ -45,10 +45,10 @@ require_once './backend/db_setup.php';
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="features.php">Features</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="about.php">About</a>
               </li>
             </ul>
           </div>

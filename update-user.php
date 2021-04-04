@@ -3,10 +3,10 @@
  if(!isset($_SESSION['USER-EMAIL'])){
      header('location: index.php');
  }
- if(isset($_SESSION['MESSAGE'])){
-     echo $_SESSION['MESSAGE'];
-    unset($_SESSION['MESSAGE']);
- }
+//  if(isset($_SESSION['MESSAGE'])){
+//      echo $_SESSION['MESSAGE'];
+//     unset($_SESSION['MESSAGE']);
+//  }
 
 $customer_id = NULL;
  if(isset($_GET['customer_id'])){
@@ -146,6 +146,25 @@ $customer_id = NULL;
 
     </div>
     <?php include './components/add-customer.php'?>
+
+    <?php 
+        if(isset($_SESSION['MESSAGE'])){
+          // echo $_SESSION['MESSAGE'];
+
+          echo '
+          <div id="alert_messages" class="bg-danger text-white justify-content-between">
+            <span>'.
+            $_SESSION['MESSAGE']
+            .'</span>
+            <span class="float-right">
+            <i class="fa fa-window-close text-white" onclick="closeFnx1()"></i>
+          </span>
+          </div>
+          ';
+         unset($_SESSION['MESSAGE']);
+     
+      }
+      ?>
 
     <script>
       document.getElementById("amount-page").style.height =

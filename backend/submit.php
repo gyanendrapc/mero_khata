@@ -28,12 +28,12 @@ if(isset($_GET['add_customer'])){
     $sql = "select * from customers where ccontact = '$contact' and user_id ='".$_SESSION['ID']."'";
     $result = mysqli_query($conn, $sql);
     if(mysqli_num_rows($result) > 0){
-      $_SESSION['MESSAGE']="<script> alert('Customer already in the list');</script>";
+      $_SESSION['MESSAGE']="Customer is already in the list";
       header('location: ../customers.php');
     }else{
       $sql = "insert into customers (cname, caddress, ccontact, cemail, camount, user_id) values ('$name','$address','$contact','$email','$amount', '".$_SESSION['ID']."')";
       if(mysqli_query($conn, $sql)){
-        $_SESSION['MESSAGE']="<script> alert('Customer added');</script>";
+        $_SESSION['MESSAGE']="Customer added";
         header('location: ../customers.php');
         
       }
@@ -42,7 +42,7 @@ if(isset($_GET['add_customer'])){
     
     
   }else{
-    $_SESSION['MESSAGE']="<script> alert('Customer not added');</script>";
+    $_SESSION['MESSAGE']="Customer not added";
     header('location: ../customers.php');
     
   }
@@ -63,7 +63,7 @@ if(isset($_GET['deleteCustomer'])){
   
   $sql = "delete from customers where id=$id";
   if(mysqli_query($conn, $sql)){
-    echo $_SESSION['MESSAGE'] = "<script>alert('Customer deleted successfully');</script>";
+    echo $_SESSION['MESSAGE'] = "Customer deleted successfully";
     
     $sql1 = "DELETE FROM customers_log WHERE customer_id = $id";
     if(mysqli_query($conn, $sql1)){
@@ -74,7 +74,7 @@ if(isset($_GET['deleteCustomer'])){
     header('location: ../customers.php');
     
   }else{
-    echo $_SESSION['MESSAGE'] = "<script>alert('Customer not deleted');</script>";
+    echo $_SESSION['MESSAGE'] = "Customer not deleted'";
     // echo "Error deleting record: " . mysqli_error($conn);
     header('location: ../customers.php');
     
@@ -95,11 +95,11 @@ if(isset($_GET['update_customer'])){
     
     $sql = "update customers set caddress = '$address', ccontact = '$contact', cemail = '$email' where id='$cid'";
     if(mysqli_query($conn, $sql)){
-      echo $_SESSION['MESSAGE'] = "<script>alert('Customer updated successfully');</script>";
+      echo $_SESSION['MESSAGE'] = "Customer updated successfully";
       header('location: ../customers.php');
       
     }else{
-      echo $_SESSION['MESSAGE'] = "<script>alert('Customer not updated');</script>";
+      echo $_SESSION['MESSAGE'] = "Customer not updated";
       // echo "Error deleting record: " . mysqli_error($conn);
       header('location: ../customers.php');  
     }
@@ -135,10 +135,10 @@ if(isset($_GET['add_amount'])){
       }
       echo $amountAdded;
       // ********    
-      echo $_SESSION['MESSAGE'] = "<script>alert('Amount added');</script>";
+      echo $_SESSION['MESSAGE'] = "Amount added";
       // header('location: ../customers.php');
     }else{
-      echo $_SESSION['MESSAGE'] = "<script>alert('Amount not added');</script>";
+      echo $_SESSION['MESSAGE'] = "Amount not added";
       // echo "Error deleting record: " . mysqli_error($conn);
       // header('location: ../customers.php');  
     }
@@ -194,11 +194,11 @@ if(isset($_GET['substract_amount'])){
         echo "0 results";
       }
       // ***********
-      echo $_SESSION['MESSAGE'] = "<script>alert('Amount substracted');</script>";
+      echo $_SESSION['MESSAGE'] = "Amount substracted";
       // header('location: ../customers.php');
       
     }else{
-      echo $_SESSION['MESSAGE'] = "<script>alert('Amount not substracted');</script>";
+      echo $_SESSION['MESSAGE'] = "Amount not substracted";
       // echo "Error deleting record: " . mysqli_error($conn);
       // header('location: ../customers.php');  
     }    

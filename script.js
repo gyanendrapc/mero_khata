@@ -4,6 +4,10 @@ const addCustomer = document.querySelector("#add-customer");
 const viewCustomer = document.querySelector("#view-customer");
 const editCustomer = document.querySelector("#edit-customer");
 const deleteCustomer = document.querySelector("#delete-customer");
+
+const alert_message = document.querySelector("#alert_messages");
+console.log(alert_message);
+
 // const updateAmount = document.querySelector("#update-amount");
 
 // add customer
@@ -46,7 +50,9 @@ function closeFnx() {
   addCustomer.style.display = "none";
   viewCustomer.style.display = "none";
   editCustomer.style.display = "none";
-  // updateAmount.style.display = "none";
+}
+function closeFnx1() {
+  alert_message.style.display = "none";
 }
 
 // delete function

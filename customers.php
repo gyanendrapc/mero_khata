@@ -3,11 +3,11 @@
  if(!isset($_SESSION['USER-EMAIL'])){
      header('location: index.php');
  }
- if(isset($_SESSION['MESSAGE'])){
-     echo $_SESSION['MESSAGE'];
-    unset($_SESSION['MESSAGE']);
+//  if(isset($_SESSION['MESSAGE'])){
+//      echo $_SESSION['MESSAGE'];
+//     unset($_SESSION['MESSAGE']);
 
- }
+//  }
  require_once './backend/db.php';
  ?>
 <!DOCTYPE html>
@@ -90,10 +90,30 @@ if(isset($_SESSION['USER-NAME'])){
         <?php include './components/customer-table.php'?>
       </section>
       <?php include './components/add-customer.php'?>
-      <?php // include './components/view-customer.php'?>
-      <?php //include './components/edit-customer.php'?>
-      <?php // include './components/update-amount.php'?>
+
+    
+
     </div>
+
+    <?php 
+        if(isset($_SESSION['MESSAGE'])){
+          // echo $_SESSION['MESSAGE'];
+
+          echo '
+          <div id="alert_messages" class="bg-danger text-white justify-content-between">
+            <span>'.
+            $_SESSION['MESSAGE']
+            .'</span>
+            <span class="float-right">
+            <i class="fa fa-window-close text-white" onclick="closeFnx1()"></i>
+          </span>
+          </div>
+          ';
+         unset($_SESSION['MESSAGE']);
+     
+      }
+      ?>
+
     <script>
       document.getElementById("customer-page").style.height =
         window.innerHeight + "px";
