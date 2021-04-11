@@ -13,7 +13,7 @@ $totalUdharo = 0;
   <!-- <h3 class="pt-4 border-bottom">Details</h3> -->
   <div class="row mx-0 pt-3">
     <div class="col-md-6">
-      <h4 class="">Total Udharo</h4>
+      <h4 class="">Total Creadit</h4>
       <table class="table">
         <thead>
           <tr>
@@ -49,7 +49,7 @@ if (mysqli_num_rows($result) >
 } ?>
           <tr>
             <td colspan="4">
-              Total Udharo =
+              Credit Amount =
               <?php echo $totalUdharo;?>
             </td>
           </tr>
@@ -57,7 +57,7 @@ if (mysqli_num_rows($result) >
       </table>
     </div>
     <div class="col-md-6">
-      <h4 class="">Total paid</h4>
+      <h4 class="">Total Paid</h4>
       <table class="table">
         <thead>
           <tr>
@@ -103,7 +103,7 @@ if (mysqli_num_rows($result) >
   </div>
   <div class="text-white bg-primary text-center">
     <span
-      >Result =
+      >Balance =
       <?php echo $result = $totalUdharo - $totalPaid?></span
     >
   </div>

@@ -6,7 +6,6 @@ const editCustomer = document.querySelector("#edit-customer");
 const deleteCustomer = document.querySelector("#delete-customer");
 
 const alert_message = document.querySelector("#alert_messages");
-console.log(alert_message);
 
 // const updateAmount = document.querySelector("#update-amount");
 
@@ -64,3 +63,25 @@ function closeFnx1() {
 //     return false;
 //   }
 // }
+
+const logoutPopup = document.querySelector("#logoutPopup");
+console.log(logoutPopup);
+
+function popup() {
+  if (logoutPopup.style.display == "none") {
+    logoutPopup.style.display = "block";
+  } else {
+    logoutPopup.style.display = "none";
+  }
+}
+
+const deletePopup = document.querySelector("#deletePopup");
+console.log(deletePopup);
+
+function deletePop() {
+  if (deletePopup.style.display == "none") {
+    deletePopup.style.display = "block";
+  } else {
+    deletePopup.style.display = "none";
+  }
+}

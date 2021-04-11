@@ -61,6 +61,8 @@ if(isset($_GET['logout'])){
 if(isset($_GET['deleteCustomer'])){
   $id = $_GET['deleteCustomer'];
   
+  
+
   $sql = "delete from customers where id=$id";
   if(mysqli_query($conn, $sql)){
     echo $_SESSION['MESSAGE'] = "Customer deleted successfully";

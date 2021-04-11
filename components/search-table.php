@@ -66,13 +66,23 @@ if(!isset($_SESSION['USER-EMAIL'])){
             onclick="showEditCustomer()"
           ></i></a></span
         >&nbsp;&nbsp;|&nbsp;&nbsp;
-        <span>
-          <a
-            href="./backend/submit.php?deleteCustomer='<?php echo $row['id'];?>'"
-            onclick="confirm('are you sure want to delete');"
-          >
-            <i class="fa fa-trash delete-customer-btn text-danger"></i> </a
-        ></span>
+        <div id="deletePopup" class="w-25 bg-white shadow p-3">
+          <p>Are you sure want to delete?</p>
+          <div class="d-flex justify-content-between">
+            <a
+              href="./backend/submit.php?deleteCustomer='<?php echo $row['id'];?>'"
+              ><button class="btn btn-success">Delete</button></a
+            >
+            <a href="customers.php">
+              <button class="btn btn-danger">Cancel</button></a
+            >
+          </div>
+        </div>
+
+        <i
+          class="fa fa-trash delete-customer-btn text-danger"
+          onclick="deletePop()"
+        ></i>
       </td>
     </tr>
     <?php

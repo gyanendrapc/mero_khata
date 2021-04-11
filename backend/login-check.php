@@ -30,7 +30,7 @@ $upass = md5($upass);
 require_once 'db.php';
 
 $sql = "select username, password from users where email='$uemail' and password = '$upass' and verified = 1 LIMIT 1";
-echo mysqli_num_rows(mysqli_query($conn,$sql));
+// echo mysqli_num_rows(mysqli_query($conn,$sql));
 if(mysqli_num_rows(mysqli_query($conn,$sql)) ==1 ){
   $sql = "select * from users where email ='$uemail' AND password = '$upass' LIMIT 1";
   $result = mysqli_query($conn, $sql);

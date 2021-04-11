@@ -366,3 +366,21 @@ body{
   padding: 15px;
   left: 30%;
 }
+#logoutPopup{
+  display: none;
+  position: absolute;
+  top:20%;
+  left:35%;
+  right: 50%;
+  
+
+}
+#deletePopup{
+  display: none;
+  position: absolute;
+  top:20%;
+  left:35%;
+  right: 50%;
+  
+
+}
