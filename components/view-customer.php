@@ -10,6 +10,8 @@ $totalUdharo = 0;
 
 ?>
 <div class="pt-5 container">
+<h2 class="text-center text-dark pt-4">Customer's Details</h2>
+
   <!-- <h3 class="pt-4 border-bottom">Details</h3> -->
   <div class="row mx-0 pt-3">
     <div class="col-md-6">

@@ -148,8 +148,9 @@
                   required
                 />
               </div>
-              <div class="form-group m-0 mt-2 d-flex justify-content-center">
+              <div class="form-group m-0 mt-2 d-flex justify-content-around">
                 <button type="submit" name="signup" class="btn">Signup</button>
+                <a href="index.php" class="btn btn-danger">Login</a>
               </div>
             </form>
           </div>

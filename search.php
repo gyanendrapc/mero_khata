@@ -87,7 +87,7 @@ if(!isset($_SESSION['USER-EMAIL'])){
           echo $_SESSION['USER-NAME']."'s ";
         }
         
-        ?>Customers Table
+        ?>Search Result's
       </h3>
       <?php include './components/search-table.php'?>
     </section>

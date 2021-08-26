@@ -79,7 +79,7 @@ if(!isset($_SESSION['USER-EMAIL'])){
       </div>
     </nav>
     <div id ="logoutPopup" class="w-25 bg-white shadow p-3">
-      <p>Are you sure?</p>
+      <p>Are you sure want logout..?</p>
       <div class="d-flex justify-content-between">
         <a href="index.php"><button class="btn btn-success">Ok</button></a>
       <a href="customers.php"> <button class="btn btn-danger">Cancel</button></a>
