@@ -61,8 +61,8 @@ if (isset($_POST['signup'])) {
           // echo "New record created successfully";
           $to = $useremail;
           $subject = "Email verification";
-          $message = "Click Here: <a href='http://localhost/mero_khata/backend/verify.php?vkey=$vkey'> <b>to register</b></a>";
-          $headers = "from:<chaudharygyane699@gmail.com>";
+          $message = "Click Here: <a href='http://localhost/www/mero_khata/backend/verify.php?vkey=$vkey'> <b>to register</b></a>";
+          $headers = "From: merokhata00@gmail.com";
           $headers .= "MIME-Version: 1.0" . "\r\n";
           $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";   
           if(mail($to,$subject,$message,$headers)){
